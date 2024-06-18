@@ -1,0 +1,3 @@
+For creating a project, suppose vue/react with vite,
+
+npm install vite@latest react-crash-2024
