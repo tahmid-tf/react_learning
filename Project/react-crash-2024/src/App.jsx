@@ -1,4 +1,15 @@
 import React from "react";
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(<Route index element={<h1>My App</h1>} />)
+);
+
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import HomeCards from "./components/HomeCards";
@@ -7,24 +18,7 @@ import JobListings from "./components/JobListings";
 import ViewAllJobs from "./components/ViewAllJobs";
 
 const App = () => {
-  return (
-    <>
-      <NavBar />
-      <Hero title="Test Title" subtitle="This is the subtitle" />
-
-      {/* <!-- Developers and Employers --> */}
-
-      <HomeCards></HomeCards>
-
-      {/* <!-- Browse Jobs --> */}
-
-      <JobListings></JobListings>
-
-      {/* <!-- View ALl Jobs --> */}
-
-      <ViewAllJobs />
-    </>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
