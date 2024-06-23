@@ -6,16 +6,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(<Route index element={<h1>My App</h1>} />)
-);
+import MainLayout from "./layouts/MainLayout";
+import HomePage from "./pages/HomePage";
 
-import NavBar from "./components/NavBar";
-import Hero from "./components/Hero";
-import HomeCards from "./components/HomeCards";
-import Card from "./components/Card";
-import JobListings from "./components/JobListings";
-import ViewAllJobs from "./components/ViewAllJobs";
+const router = createBrowserRouter(
+  createRoutesFromElements(<Route index element={<HomePage></HomePage>} />)
+);
 
 const App = () => {
   return <RouterProvider router={router} />;
