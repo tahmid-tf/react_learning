@@ -10,7 +10,11 @@ import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route index element={<HomePage></HomePage>} />)
+  createRoutesFromElements(
+    <Route path="/" element={<MainLayout></MainLayout>}>
+      <Route index element={<HomePage></HomePage>} />
+    </Route>
+  )
 );
 
 const App = () => {
