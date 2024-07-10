@@ -5,7 +5,7 @@ import Spinner from "./Spinner";
 
 import { useState, useEffect } from "react";
 
-const JobListings = ({ isHome = false }) => {
+const JobListings = ({ isHome = true }) => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -37,9 +37,11 @@ const JobListings = ({ isHome = false }) => {
             <Spinner loading={loading}></Spinner>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {jobs.slice(0, 3).map((job, key) => (
-                <JobListing job={job} key={key} />
-              ))}
+              {isHome == true
+                ? jobs
+                    .slice(0, 3)
+                    .map((job, key) => <JobListing job={job} key={key} />)
+                : jobs.map((job, key) => <JobListing job={job} key={key} />)}
             </div>
           )}
         </div>

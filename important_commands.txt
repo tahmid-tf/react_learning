@@ -1,0 +1,6 @@
+1. For creating a project, suppose vue/react with vite,
+
+npm install vite@latest react-crash-2024
+
+2. react icons
+https://react-icons.github.io/react-icons/
